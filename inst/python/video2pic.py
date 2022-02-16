@@ -43,7 +43,7 @@ def video2pic_py(pathIn, pathOut, fps):
 
         # Read that image
         success, image = vidcap.read()
-        print ("Read a new frame: ", success)
+        # print ("Read a new frame: ", success)
         cv2.imwrite(pathOut + "/" + filename + "_Frame_%d.JPG" % count, image)
         count = count + 1
 

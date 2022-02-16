@@ -8,7 +8,7 @@ been implemented in python.
 ## Installation
 
 Because the algorithm uses python in the background, you first need to
-install miniconda on your system. Please follow the instructions
+install **miniconda** on your system. Please follow the instructions
 [here](https://docs.conda.io/en/latest/miniconda.html) to do so. Once
 you have installed miniconda, you can install the `video2pic` package
 from github.
@@ -28,8 +28,8 @@ video2pic_install()
 ```
 
 This will create a virtual python environment called “video2pic”
-containing the required packages. You may need to restart your R-session
-after this!
+containing the required packages. You may need to **restart your
+R-session** after this!
 
 ## Example
 
@@ -56,5 +56,6 @@ video2pic(video, outdir = tempdir(), fps = 1)
 imgs <- dir(tempdir(), pattern = ".JPG", full.names = T)
 
 # We can visualize some of them if we want
+library(magick)
 image_read(sample(imgs, 4))
 ```
