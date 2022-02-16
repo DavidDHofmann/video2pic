@@ -18,6 +18,17 @@ video2pic_install <- function(py_env = "video2pic") {
   reticulate::py_install("opencv-python", envname = py_env, pip = T)
 }
 
+#' Initalize the python environment
+#'
+#' Function to initalize the python environment
+#' @export
+#' @param py_env the conda environment to use. "video2pic" by default
+#' @examples
+#' video2pic(py_env = "video2pic")
+video2pic_initialize <- function(py_env = "video2pic") {
+  reticulate::use_condaenv(py_env)
+}
+
 #' Convert video to jpeg
 #'
 #' Function to convert a video into frames

@@ -31,7 +31,7 @@ video2pic_install()
 ```
 
 This will create a virtual python environment called "video2pic" containing the
-required packages. Now you're ready to go!
+required packages. You may need to restart your R-session after this!
 
 ## Example
 The function to extract frames from a video is called `video2pic()`. The
@@ -42,6 +42,9 @@ videos at once, so that you don't need to loop through multiple files.
 ```r
 # Load package
 library(video2pic)
+
+# Initalize python environment
+video2pic_initialize()
 
 # Path to the example video
 video <- system.file("extdata", "Earth.mp4", package = "video2pic")
