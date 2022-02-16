@@ -28,7 +28,8 @@ video2pic_install()
 ```
 
 This will create a virtual python environment called “video2pic”
-containing the required packages. Now you’re ready to go!
+containing the required packages. You may need to restart your R-session
+after this!
 
 ## Example
 
@@ -42,6 +43,9 @@ multiple files.
 # Load package
 library(video2pic)
 
+# Initalize python environment
+video2pic_initialize()
+
 # Path to the example video
 video <- system.file("extdata", "Earth.mp4", package = "video2pic")
 
@@ -49,5 +53,8 @@ video <- system.file("extdata", "Earth.mp4", package = "video2pic")
 video2pic(video, outdir = tempdir(), fps = 1)
 
 # The extracted images can now be found here
-tempdir()
+imgs <- dir(tempdir(), pattern = ".JPG", full.names = T)
+
+# We can visualize some of them if we want
+image_read(sample(imgs, 4))
 ```

@@ -53,6 +53,9 @@ video <- system.file("extdata", "Earth.mp4", package = "video2pic")
 video2pic(video, outdir = tempdir(), fps = 1)
 
 # The extracted images can now be found here
-tempdir()
+imgs <- dir(tempdir(), pattern = ".JPG", full.names = T)
+
+# We can visualize some of them if we want
+image_read(sample(imgs, 4))
 
 ```
