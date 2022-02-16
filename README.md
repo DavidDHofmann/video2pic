@@ -1,0 +1,53 @@
+
+# video2pic <img src="man/figures/video2pic.png" align="right" width="150" height="150"/>
+
+`video2pic` is an R-package that allows you to extract still frames from
+a video. For efficiency purposes, the frame-extraction-algorithm has
+been implemented in python.
+
+## Installation
+
+Because the algorithm uses python in the background, you first need to
+install miniconda on your system. Please follow the instructions
+[here](https://docs.conda.io/en/latest/miniconda.html) to do so. Once
+you have installed miniconda, you can install the `video2pic` package
+from github.
+
+``` r
+library(devtools)
+install_github("DavidDHofmann/video2pic")
+```
+
+Finally, you will also need to ensure that all necessary python packages
+are installed. This can be done using the `video2pic_install()`
+function.
+
+``` r
+library(video2pic)
+video2pic_install()
+```
+
+This will create a virtual python environment called “video2pic”
+containing the required packages. Now you’re ready to go!
+
+## Example
+
+The function to extract frames from a video is called `video2pic()`. The
+function allows you to specify an output directory and the number of
+frames per second that should be extracted. Note that you could also
+provide multiple videos at once, so that you don’t need to loop through
+multiple files.
+
+``` r
+# Load package
+library(video2pic)
+
+# Path to the example video
+video <- system.file("extdata", "Earth.mp4", package = "video2pic")
+
+# Extract one frame per second (and store them to a temporary directory)
+video2pic(video, outdir = tempdir(), fps = 1)
+
+# The extracted images can now be found here
+tempdir()
+```
