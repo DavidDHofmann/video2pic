@@ -1,10 +1,17 @@
 ---
-output:
-  github_document:
-  html_preview: false
-editor_options:
-  chunk_output_type: console
+output: github_document
 ---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
 
 # video2pic <img src="man/figures/video2pic.png" align="right" width="150" height="150"/>
 `video2pic` is an R-package that allows you to extract still frames from a
@@ -15,13 +22,13 @@ implemented in python.
 Because the algorithm uses python in the background, you first need to install
 **miniconda** on your system. Please follow the instructions
 [here](https://docs.conda.io/en/latest/miniconda.html) to do so. Once you have
-installed miniconda, you can install the `video2pic` package from github.
+installed miniconda, you can install the development version of video2pic from
+[GitHub](https://github.com/) with:
 
 ``` r
-library(devtools)
-install_github("DavidDHofmann/video2pic")
+# install.packages("devtools")
+devtools::install_github("DavidDHofmann/video2pic")
 ```
-
 Finally, you will also need to ensure that all necessary python packages are
 installed. This can be done using the `video2pic_install()` function.
 
@@ -39,9 +46,10 @@ function allows you to specify an output directory and the number of frames per
 second that should be extracted. Note that you could also provide multiple
 videos at once, so that you don't need to loop through multiple files.
 
-```r
-# Load package
+```{r, echo = T, message = F, warning = F}
+# Load required packages
 library(video2pic)
+library(magick)
 
 # Initalize python environment
 video2pic_initialize()
@@ -56,7 +64,6 @@ video2pic(video, outdir = tempdir(), fps = 1)
 imgs <- dir(tempdir(), pattern = ".JPG", full.names = T)
 
 # We can visualize some of them if we want
-library(magick)
 image_read(sample(imgs, 4))
 
 ```

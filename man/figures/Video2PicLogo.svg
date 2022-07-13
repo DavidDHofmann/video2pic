@@ -15,7 +15,10 @@
    version="1.1"
    id="svg902"
    sodipodi:docname="Video2PicLogo.svg"
-   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   inkscape:export-filename="/home/david/ownCloud/University/15. PhD/General/R-Packages/video2pic/man/figures/video2pic.png"
+   inkscape:export-xdpi="84.599998"
+   inkscape:export-ydpi="84.599998">
   <defs
      id="defs896">
     <clipPath
@@ -71,7 +74,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2"
-     inkscape:cx="300.57916"
+     inkscape:cx="62.07916"
      inkscape:cy="490.68872"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -90,7 +93,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -148,7 +151,7 @@
            height="729"
            x="237.5"
            y="-79.09449" /></flowRegion><flowPara
-         id="flowPara910"></flowPara></flowRoot>    <g
+         id="flowPara910" /></flowRoot>    <g
        id="g3081"
        style="display:inline;fill:#6394eb;fill-opacity:1"
        transform="matrix(0.72890584,0,0,0.60382335,-71.536309,33.894911)">

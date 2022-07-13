@@ -1,4 +1,6 @@
 
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
 # video2pic <img src="man/figures/video2pic.png" align="right" width="150" height="150"/>
 
 `video2pic` is an R-package that allows you to extract still frames from
@@ -10,12 +12,12 @@ been implemented in python.
 Because the algorithm uses python in the background, you first need to
 install **miniconda** on your system. Please follow the instructions
 [here](https://docs.conda.io/en/latest/miniconda.html) to do so. Once
-you have installed miniconda, you can install the `video2pic` package
-from github.
+you have installed miniconda, you can install the development version of
+video2pic from [GitHub](https://github.com/) with:
 
 ``` r
-library(devtools)
-install_github("DavidDHofmann/video2pic")
+# install.packages("devtools")
+devtools::install_github("DavidDHofmann/video2pic")
 ```
 
 Finally, you will also need to ensure that all necessary python packages
@@ -29,7 +31,7 @@ video2pic_install()
 
 This will create a virtual python environment called “video2pic”
 containing the required packages. You may need to **restart your
-R-session** after this!
+R-session** after this\!
 
 ## Example
 
@@ -40,8 +42,9 @@ provide multiple videos at once, so that you don’t need to loop through
 multiple files.
 
 ``` r
-# Load package
+# Load required packages
 library(video2pic)
+library(magick)
 
 # Initalize python environment
 video2pic_initialize()
@@ -51,11 +54,15 @@ video <- system.file("extdata", "Earth.mp4", package = "video2pic")
 
 # Extract one frame per second (and store them to a temporary directory)
 video2pic(video, outdir = tempdir(), fps = 1)
+#> Extracting frames...
+#>   |                                                               |                                                       |   0%  |                                                               |=======================================================| 100%
+#> Extracting done...
 
 # The extracted images can now be found here
 imgs <- dir(tempdir(), pattern = ".JPG", full.names = T)
 
 # We can visualize some of them if we want
-library(magick)
 image_read(sample(imgs, 4))
 ```
+
+<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />

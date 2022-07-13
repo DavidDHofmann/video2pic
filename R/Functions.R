@@ -13,7 +13,7 @@ NULL
 #' @examples
 #' video2pic(py_env = "video2pic")
 video2pic_install <- function(py_env = "video2pic") {
-  reticulate::conda_create(py_env)
+  reticulate::conda_create(py_env, python_version = 3.7)
   reticulate::use_condaenv(py_env)
   reticulate::py_install("opencv-python", envname = py_env, pip = T)
 }
