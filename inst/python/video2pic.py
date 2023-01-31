@@ -10,9 +10,9 @@ import numpy as np
 def video2pic_py(pathIn, pathOut, fps):
 
     # # Testing
-    # pathIn  = "/home/david/Schreibtisch/WhatsApp Video 2021-05-10.mp4"
-    # pathOut = "/home/david/Schreibtisch/test"
-    # fps     = 0.5
+    # pathIn  = "/home/david/Schreibtisch/IMG_0020 genet test.MP4"
+    # pathOut = "/home/david/Schreibtisch/Test"
+    # fps     = 1
 
     # Identify original file name
     filename = os.path.basename(pathIn)
@@ -29,7 +29,7 @@ def video2pic_py(pathIn, pathOut, fps):
     # Read images
     success, image = vidcap.read()
     count          = 0
-    success        = True
+    # success        = True
 
     # Extract frames
     while success:
@@ -43,8 +43,9 @@ def video2pic_py(pathIn, pathOut, fps):
 
         # Read that image
         success, image = vidcap.read()
+        if success:
         # print ("Read a new frame: ", success)
-        cv2.imwrite(pathOut + "/" + filename + "_Frame_%d.JPG" % count, image)
+            cv2.imwrite(pathOut + "/" + filename + "_Frame_%d.JPG" % count, image)
         count = count + 1
 
 # # Function call
