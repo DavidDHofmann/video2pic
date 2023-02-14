@@ -15,7 +15,7 @@ NULL
 video2pic_install <- function(py_env = "video2pic") {
   reticulate::conda_create(py_env, python_version = 3.7)
   reticulate::use_condaenv(py_env)
-  reticulate::py_install("opencv-python", envname = py_env, pip = T)
+  reticulate::py_install("opencv-python==4.6.0.66", envname = py_env, pip = T)
 }
 
 #' Initalize the python environment
