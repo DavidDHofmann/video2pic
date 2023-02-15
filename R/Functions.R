@@ -3,6 +3,7 @@
 ################################################################################
 #' @importFrom reticulate source_python
 #' @importFrom reticulate py_install conda_create use_condaenv
+#' @importFrom tools file_path_sans_ext
 NULL
 
 #' Install python dependencies for video2pic
@@ -33,7 +34,7 @@ video2pic_initialize <- function(py_env = "video2pic") {
 #'
 #' Function to convert a video into frames
 #' @export
-#' @param filepath filepath(s) to the video file(s) that need to be converted
+#' @param file filepath(s) to the video file(s) that need to be converted
 #' @param outdir character vector, either of length 1 or same length as
 #' \code{file} directory or directories to the folder(s) where the converted
 #' file(s) should be stored. By default, this is set to the directory of the
@@ -99,7 +100,7 @@ video2pic <- function(file = NULL, outdir = NULL, fps = NULL, overwrite = F) {
   for (i in 1:length(file)) {
 
     # Check if output files alraedy exist
-    base <- strsplit(basename(file[i]), split = "\\.")[[1]][-2]
+    base <- file_path_sans_ext(basename(file[i]))
     base <- paste0(base, "_Frame_0.JPG")
     outname <- file.path(outdir[i], base)
 
