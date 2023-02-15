@@ -7,6 +7,8 @@
 video2pic(file = NULL, outdir = NULL, fps = NULL, overwrite = F)
 }
 \arguments{
+\item{file}{filepath(s) to the video file(s) that need to be converted}
+
 \item{outdir}{character vector, either of length 1 or same length as
 \code{file} directory or directories to the folder(s) where the converted
 file(s) should be stored. By default, this is set to the directory of the
@@ -16,8 +18,6 @@ input file(s).}
 
 \item{overwrite}{logical should frames that already exist in the output
 directory be overwritten?}
-
-\item{filepath}{filepath(s) to the video file(s) that need to be converted}
 }
 \description{
 Function to convert a video into frames
