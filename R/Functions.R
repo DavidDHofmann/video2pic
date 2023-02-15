@@ -99,14 +99,14 @@ video2pic <- function(file = NULL, outdir = NULL, fps = NULL, overwrite = F) {
   for (i in 1:length(file)) {
 
     # Check if output files alraedy exist
-    base <- strsplit(basename(file[i]), split="\\.")[[1]][-2]
+    base <- strsplit(basename(file[i]), split = "\\.")[[1]][-2]
     base <- paste0(base, "_Frame_0.JPG")
     outname <- file.path(outdir[i], base)
 
     # If output already exists, skip
     if (file.exists(outname) & !overwrite) {
 
-      warning("Frames for ", basename(file)," already exist in the output directory... Skipping\n")
+      warning("Frames for ", basename(file[i])," already exist in the output directory... Skipping\n")
       next
 
       # Otherwise, run extraction
